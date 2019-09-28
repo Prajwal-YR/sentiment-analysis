@@ -1,311 +1,373 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>SB Admin - Dashboard</title>
-
-  <!-- Custom fonts for this template-->
-  <link href="/static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Page level plugin CSS-->
-  <link href="/static/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="/static/css/sb-admin.css" rel="stylesheet">
-
+	<title>Contact V5</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
 </head>
+<body>
 
-<body id="page-top">
 
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<span class="contact100-form-title">
+					Add student
+				</span>
 
-    <a class="navbar-brand mr-1" href="index.html">Mood-Assist</a>
+				<div class="wrap-input100 validate-input bg1" data-validate="Please enter student name">
+					<span class="label-input100">Student name *</span>
+					<input class="input100" type="text" name="name" placeholder="Enter student name">
+				</div>
+				<div class="wrap-input100 validate-input bg1" data-validate="Please enter student ID">
+					<span class="label-input100">Student ID *</span>
+					<input class="input100" type="text" name="studID" placeholder="Enter student ID">
+				</div>
+				<div class="wrap-contact100-form-radio">
+					<span class="label-input100">Gender</span>
 
-    <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
-      <i class="fas fa-bars"></i>
-    </button>
+					<div class="contact100-form-radio m-t-15">
+						<input class="input-radio100" id="radio1" type="radio" name="female" value="physical" checked="checked">
+						<label class="label-radio100" for="radio1">
+							Female
+						</label>
+					</div>
 
-    <!-- Navbar Search -->
-    <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-        <div class="input-group-append">
-          <button class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
+					<div class="contact100-form-radio">
+						<input class="input-radio100" id="radio2" type="radio" name="male" value="digital">
+						<label class="label-radio100" for="radio2">
+							Male
+						</label>
+					</div>
 
-    <!-- Navbar -->
-    <ul class="navbar-nav ml-auto ml-md-0">
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-bell fa-fw"></i>
-          <span class="badge badge-danger">9+</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="alertsDropdown">
-          <a class="dropdown-item" href="#">Check student profiles</a>
-          <a class="dropdown-item" href="#">Check database</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Update student info</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow mx-1">
-        <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-envelope fa-fw"></i>
-          <span class="badge badge-danger">7</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="messagesDropdown">
-          <a class="dropdown-item" href="#">Add student</a>
-          <a class="dropdown-item" href="#">Add to database</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Edit contact info</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown no-arrow">
-        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-user-circle fa-fw"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-          <a class="dropdown-item" href="#">Settings</a>
-          <a class="dropdown-item" href="#">Activity Log</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-        </div>
-      </li>
-    </ul>
+				</div>
+				<div class="wrap-input100 validate-input bg1" data-validate="Please enter student age">
+					<span class="label-input100">Age *</span>
+					<input class="input100" type="text" name="age" placeholder="Enter student age">
+				</div>
+				<div class="wrap-contact100-form-radio">
+					<span class="label-input100">Home environment</span>
 
-  </nav>
+					<div class="contact100-form-radio m-t-15">
+						<input class="input-radio100" id="radio3" type="radio" name="urban" value="physical" checked="checked">
+						<label class="label-radio100" for="radio3">
+							Urban
+						</label>
+					</div>
 
-  <div id="wrapper">
+					<div class="contact100-form-radio">
+						<input class="input-radio100" id="radio4" type="radio" name="rural" value="digital">
+						<label class="label-radio100" for="radio4">
+							Rural
+						</label>
+					</div>
 
-    <!-- Sidebar -->
-    <ul class="sidebar navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Pages</span>
-        </a>
-        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
-          <h6 class="dropdown-header">Login Screens:</h6>
-          <a class="dropdown-item" href="login.html">Login</a>
-          <a class="dropdown-item" href="register.html">Register</a>
-          <a class="dropdown-item" href="forgot-password.html">Forgot Password</a>
-          <div class="dropdown-divider"></div>
-          <h6 class="dropdown-header">Other Pages:</h6>
-          <a class="dropdown-item" href="404.html">404 Page</a>
-          <a class="dropdown-item" href="blank.html">Blank Page</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-          <i class="fas fa-fw fa-chart-area"></i>
-          <span>Charts</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fas fa-fw fa-table"></i>
-          <span>Tables</span></a>
-      </li>
-    </ul>
+				</div>
+				<div class="wrap-input100 validate-input bg1" data-validate="Please enter family size">
+					<span class="label-input100">Family size </span>
+					<input class="input100" type="text" name="famsize" placeholder="Enter family size">
+				</div>
 
-    <div id="content-wrapper">
+				<div class="wrap-input100 input100-select bg1">
+					<span class="label-input100">Mother's education level </span>
+					<div>
+						<select class="js-select2" name="service">
+							<option>Please choose</option>
+							<option>Primary school</option>
+							<option>Secondary school</option>
+							<option>University</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+				<div class="wrap-input100 input100-select bg1">
+					<span class="label-input100">Mother's occupation</span>
+					<div>
+						<select class="js-select2" name="service">
+							<option>Please choose</option>
+							<option>Unemployed</option>
+							<option>Housewife</option>
+							<option>Manager</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+				<div class="wrap-input100 input100-select bg1">
+					<span class="label-input100">Father's education level </span>
+					<div>
+						<select class="js-select2" name="service">
+							<option>Please choose</option>
+							<option>Primary school</option>
+							<option>Secondary school</option>
+							<option>University</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+				<div class="wrap-input100 input100-select bg1">
+					<span class="label-input100">Father's occupation</span>
+					<div>
+						<select class="js-select2" name="service">
+							<option>Please choose</option>
+							<option>Unemployed</option>
+							<option>Househusband</option>
+							<option>Manager</option>
+						</select>
+						<div class="dropDownSelect2"></div>
+					</div>
+				</div>
+				
 
-      <div class="container-fluid">
+				<div class="wrap-contact100-form-range">
+					<span class="label-input100">Travel time</span>
 
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="#">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Overview</li>
-        </ol>
-        
-        <h4>Upload your files</h4>
-        
+					<div class="contact100-form-range-value">
+						Minutes: <span id="value-lower">0</span>  - Minutes: <span id="value-upper">300</span>
+						<input type="text" name="from-value">
+						<input type="text" name="to-value">
+					</div>
 
-        <form method="POST">
-            <div class="form-group">
-              <label for="exampleFormControlFile1">Upload Grades </label>
-              <input type="file" name='grades' class="form-control-file" id="exampleFormControlFile1">
-            </div>
-          </form>
-          <button type="button" class="btn btn-outline-primary">Submit</button>
-          <form method="POST">
-            <div class="form-group">
-              <label for="exampleFormControlFile1">Upload Attendance File </label>
-              <input type="file"  name='attendance' class="form-control-file" id="exampleFormControlFile1">
-            </div>
-          </form>
-          <button type="button" class="btn btn-outline-primary">Submit</button>
-          <br>
-          
-        <!-- Sign in as admin or student -->
+					<div class="contact100-form-range-bar">
+						<div id="filter-bar"></div>
+					</div>
+				</div>
+				<div class="wrap-contact100-form-range">
+					<span class="label-input100">Study time</span>
 
-         <!-- Area Chart Example
-        <div class="card mb-3">
-            <div class="card-header">
-              <i class="fas fa-chart-area"></i>
-              Area Chart Example</div>
-            <div class="card-body">
-              <canvas id="myAreaChart" width="100%" height="30"></canvas>
-            </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-          </div>
-        -->
-        <!-- DataTables Example -->
-        <br>
-        <div class="card mb-3">
-          <div class="card-header">
-              <button type="button" class="btn btn-outline-success float-right" >Add student </button>
-            <i class="fas fa-table"></i>
-            Student Details</div>
-          <div class="card-body">
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Student ID</th>
-                    <th>Student Name</th>
-                    <th>Attendance</th>
-                    <th>Predicted grades</th>
-                    <th>Actual grades</th>
-                    <th>Number of depressed tweets</th>
-                    <th>Contacted?</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr>
-                    <td>Student ID</td>
-                    <th>Student Name</th>
-                    <th>Attendance</th>
-                    <th>Predicted grades</th>
-                    <th>Actual grades</th>
-                    <th>Number of depressed tweets</th>
-                    <th>Contacted?</th>
-                  </tr>
-                </tfoot>
-                <tbody>
-                    {% for i in database_dict.values() %}
-                    
-                  <tr>
-                    {%for j in i %}
-                    <td>{{ j }}</td>
-                     {% endfor %}  
-                  </tr>
-                  {% endfor %}
+					<div class="contact100-form-range-value">
+						<span id="value-lower">0</span> hours - <span id="value-upper">24</span> hours
+						<input type="text" name="from-value">
+						<input type="text" name="to-value">
+					</div>
 
-                  <tr>
-                    <td>1034</td>
-                    <td>Michael Kinns</td>
-                    <td>73%</td>
-                    <td>B+</td>
-                    <td>C+</td>
-                    <td>4</td>
-                    <td>y</td>
-                  </tr>
-                  <tr>
-                      <td>1024</td>
-                      <td>George Minerva</td>
-                      <td>33%</td>
-                      <td>C-</td>
-                      <td>D+</td>
-                      <td>21</td>
-                      <td>n</td>
-                    </tr>
-                    <tr>
-                        <td>1076</td>
-                        <td>Leo Tolstoy</td>
-                        <td>67%</td>
-                        <td>A+</td>
-                        <td>A+</td>
-                        <td>11</td>
-                        <td>y</td>
-                      </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-        </div>
+					<div class="contact100-form-range-bar2">
+						<div id="filter-bar2"></div>
+					</div>
+				</div>
 
-      </div>
-      <!-- /.container-fluid -->
-      <br>
-      <h4>Do you wish to view any specific student data?</h4>
+				<div class="wrap-input100 validate-input bg1 rs1-wrap-input100" data-validate = "Please enter number of previous subjects with 'F' grade">
+					<span class="label-input100">Number of previous subjects with 'F' grade *</span>
+					<input class="input100" type="text" name="fgrade" placeholder="Enter number of previous subjects with 'F' grade">
+				</div>
+				
+				<div class="wrap-contact100-form-radio">
+					<span class="label-input100">Additional tuition?</span>
 
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
-          </div>
-        </div>
-      </footer>
+					<div class="contact100-form-radio m-t-15">
+						<input class="input-radio100" id="radio5" type="radio" name="tuitionyes" value="physical" checked="checked">
+						<label class="label-radio100" for="radio5">
+							Yes
+						</label>
+					</div>
 
-    </div>
-    <!-- /.content-wrapper -->
+					<div class="contact100-form-radio">
+						<input class="input-radio100" id="radio6" type="radio" name="tuitionno" value="digital">
+						<label class="label-radio100" for="radio6">
+							No
+						</label>
+					</div>
 
-  </div>
-  <!-- /#wrapper -->
+				</div>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+				<div class="wrap-contact100-form-radio">
+					<span class="label-input100">On student support?</span>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
-    </div>
-  </div>
+					<div class="contact100-form-radio m-t-15">
+						<input class="input-radio100" id="radio7" type="radio" name="studsupportyes" value="physical" checked="checked">
+						<label class="label-radio100" for="radio7">
+							Yes
+						</label>
+					</div>
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="/static/vendor/jquery/jquery.min.js"></script>
-  <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+					<div class="contact100-form-radio">
+						<input class="input-radio100" id="radio8" type="radio" name="studsupportno" value="digital">
+						<label class="label-radio100" for="radio8">
+							No
+						</label>
+					</div>
 
-  <!-- Core plugin JavaScript-->
-  <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
+				</div>
 
-  <!-- Page level plugin JavaScript-->
-  <script src="/static/vendor/chart.js/Chart.min.js"></script>
-  <script src="/static/vendor/datatables/jquery.dataTables.js"></script>
-  <script src="/static/vendor/datatables/dataTables.bootstrap4.js"></script>
+				<div class="wrap-contact100-form-radio">
+					<span class="label-input100">On family support?</span>
 
-  <!-- Custom scripts for all pages-->
-  <script src="/static/js/sb-admin.min.js"></script>
+					<div class="contact100-form-radio m-t-15">
+						<input class="input-radio100" id="radio9" type="radio" name="famsupportyes" value="physical" checked="checked">
+						<label class="label-radio100" for="radio9">
+							Yes
+						</label>
+					</div>
 
-  <!-- Demo scripts for this page-->
-  <script src="/static/js/demo/datatables-demo.js"></script>
-  <script src="/static/js/demo/chart-area-demo.js"></script>
+					<div class="contact100-form-radio">
+						<input class="input-radio100" id="radio10" type="radio" name="famsupportno" value="digital">
+						<label class="label-radio100" for="radio10">
+							No
+						</label>
+					</div>
+
+				</div>
+				<div class="wrap-contact100-form-radio">
+					<span class="label-input100">Home internet present?</span>
+
+					<div class="contact100-form-radio m-t-15">
+						<input class="input-radio100" id="radio11" type="radio" name="wifiyes" value="physical" checked="checked">
+						<label class="label-radio100" for="radio11">
+							Yes
+						</label>
+					</div>
+
+					<div class="contact100-form-radio">
+						<input class="input-radio100" id="radio12" type="radio" name="wifino" value="digital">
+						<label class="label-radio100" for="radio12">
+							No
+						</label>
+					</div>
+
+				</div>
+
+				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please enter absence rate">
+					<span class="label-input100">Absence rate</span>
+					<textarea class="input100" name="absence" placeholder="Student absence rate"></textarea>
+				</div>
+				<div class="wrap-input100 validate-input bg0 rs1-alert-validate" data-validate = "Please enter social media handles">
+					<span class="label-input100">Social media handles</span>
+					<textarea class="input100" name="handles" placeholder="Social media handles"></textarea>
+				</div>
+
+				<div class="container-contact100-form-btn">
+					<button class="contact100-form-btn">
+						<span>
+							Submit
+							<i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function(){
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+
+
+			$(".js-select2").each(function(){
+				$(this).on('select2:close', function (e){
+					if($(this).val() == "Please chooses") {
+						$('.js-show-service').slideUp();
+					}
+					else {
+						$('.js-show-service').slideUp();
+						$('.js-show-service').slideDown();
+					}
+				});
+			});
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/noui/nouislider.min.js"></script>
+	<script>
+	    var filterBar = document.getElementById('filter-bar');
+
+	    noUiSlider.create(filterBar, {
+	        start: [ 0, 400],
+	        connect: true,
+	        range: {
+	            'min': 0,
+	            'max': 400
+	        }
+	    });
+
+	    var skipValues = [
+	    document.getElementById('value-lower'),
+	    document.getElementById('value-upper')
+	    ];
+
+	    filterBar.noUiSlider.on('update', function( values, handle ) {
+	        skipValues[handle].innerHTML = Math.round(values[handle]);
+	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+	    });
+	</script>
+	<script src="vendor/noui/nouislider.min.js"></script>
+	<script>
+	    var filterBar = document.getElementById('filter-bar2');
+
+	    noUiSlider.create(filterBar, {
+	        start: [ 0, 24],
+	        connect: true,
+	        range: {
+	            'min': 0,
+	            'max': 24
+	        }
+	    });
+
+	    var skipValues = [
+	    document.getElementById('value-lower'),
+	    document.getElementById('value-upper')
+	    ];
+
+	    filterBar.noUiSlider.on('update', function( values, handle ) {
+	        skipValues[handle].innerHTML = Math.round(values[handle]);
+	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
+	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+	    });
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
 
 </body>
-
 </html>

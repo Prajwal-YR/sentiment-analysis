@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{%block title %}
+Sign In
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel = "stylesheet" href = "{{url_for('.static', filename= 'signin.css')}}">
+{% endblock %}
+{% block content %}
+<!-- Sign in as admin or student -->
+<h1>Sign in to your account</h1>
+
+
+    <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        {{ form.hidden_tag() }}
+        {{ wtf.form_field(form.username) }}
+        {{ wtf.form_field(form.password) }}
+        {{ wtf.form_field(form.remember) }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+  <h2>Sign in as: </h2>
+  <button type="button" class="btn btn-primary btn-lg btn-block">Student</button>
+  <button type="button" class="btn btn-secondary btn-lg btn-block">School administrator</button>
+
+ 
+
+{% endblock %}

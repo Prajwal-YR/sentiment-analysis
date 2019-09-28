@@ -45,8 +45,16 @@ def update_grade(file):
         grade=str(data[1])
         doc_ref = db.collection(u'students').document(str(sid))
         doc_ref.update({u'grades': firestore.ArrayUnion([grade])})
-		return
-		
+	return
+def update_attendance(file):
+    df=pd.read_csv(file)
+    for data in df.values:
+        sid=data[0]
+        attendance=str(data[1])
+        doc_ref = db.collection(u'students').document(str(sid))
+        doc_ref.update({u'attendance': attendance})
+    return
+
 def display_table():
     docs_ref=db.collection('students').stream()
     dictionary={}

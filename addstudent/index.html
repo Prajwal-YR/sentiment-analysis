@@ -51,14 +51,14 @@
 					<span class="label-input100">Gender</span>
 
 					<div class="contact100-form-radio m-t-15">
-						<input class="input-radio100" id="radio1" type="radio" name="female" value="physical" checked="checked">
+						<input class="input-radio100" id="radio1" type="radio" name="gender" value="female" checked="checked">
 						<label class="label-radio100" for="radio1">
 							Female
 						</label>
 					</div>
 
 					<div class="contact100-form-radio">
-						<input class="input-radio100" id="radio2" type="radio" name="male" value="digital">
+						<input class="input-radio100" id="radio2" type="radio" name="gender" value="female">
 						<label class="label-radio100" for="radio2">
 							Male
 						</label>
@@ -73,14 +73,14 @@
 					<span class="label-input100">Home environment</span>
 
 					<div class="contact100-form-radio m-t-15">
-						<input class="input-radio100" id="radio3" type="radio" name="urban" value="physical" checked="checked">
+						<input class="input-radio100" id="radio3" type="radio" name="homeenvt" value="urban" checked="checked">
 						<label class="label-radio100" for="radio3">
 							Urban
 						</label>
 					</div>
 
 					<div class="contact100-form-radio">
-						<input class="input-radio100" id="radio4" type="radio" name="rural" value="digital">
+						<input class="input-radio100" id="radio4" type="radio" name="homeenvt" value="rural">
 						<label class="label-radio100" for="radio4">
 							Rural
 						</label>
@@ -159,12 +159,12 @@
 					<span class="label-input100">Study time</span>
 
 					<div class="contact100-form-range-value">
-						<span id="value-lower">0</span> hours - <span id="value-upper">24</span> hours
+						Hours: <span id="value-lower2">0</span> - Hours: <span id="value-upper2">24</span> 
 						<input type="text" name="from-value">
 						<input type="text" name="to-value">
 					</div>
 
-					<div class="contact100-form-range-bar2">
+					<div class="contact100-form-range-bar">
 						<div id="filter-bar2"></div>
 					</div>
 				</div>
@@ -178,14 +178,14 @@
 					<span class="label-input100">Additional tuition?</span>
 
 					<div class="contact100-form-radio m-t-15">
-						<input class="input-radio100" id="radio5" type="radio" name="tuitionyes" value="physical" checked="checked">
+						<input class="input-radio100" id="radio5" type="radio" name="tuition" value="tuitionyes" checked="checked">
 						<label class="label-radio100" for="radio5">
 							Yes
 						</label>
 					</div>
 
 					<div class="contact100-form-radio">
-						<input class="input-radio100" id="radio6" type="radio" name="tuitionno" value="digital">
+						<input class="input-radio100" id="radio6" type="radio" name="tuition" value="tuitionno">
 						<label class="label-radio100" for="radio6">
 							No
 						</label>
@@ -197,14 +197,14 @@
 					<span class="label-input100">On student support?</span>
 
 					<div class="contact100-form-radio m-t-15">
-						<input class="input-radio100" id="radio7" type="radio" name="studsupportyes" value="physical" checked="checked">
+						<input class="input-radio100" id="radio7" type="radio" name="studsupport" value="studsupportyes" checked="checked">
 						<label class="label-radio100" for="radio7">
 							Yes
 						</label>
 					</div>
 
 					<div class="contact100-form-radio">
-						<input class="input-radio100" id="radio8" type="radio" name="studsupportno" value="digital">
+						<input class="input-radio100" id="radio8" type="radio" name="studsupport" value="studsupportno">
 						<label class="label-radio100" for="radio8">
 							No
 						</label>
@@ -216,14 +216,14 @@
 					<span class="label-input100">On family support?</span>
 
 					<div class="contact100-form-radio m-t-15">
-						<input class="input-radio100" id="radio9" type="radio" name="famsupportyes" value="physical" checked="checked">
+						<input class="input-radio100" id="radio9" type="radio" name="famsupport" value="famsupportyes" checked="checked">
 						<label class="label-radio100" for="radio9">
 							Yes
 						</label>
 					</div>
 
 					<div class="contact100-form-radio">
-						<input class="input-radio100" id="radio10" type="radio" name="famsupportno" value="digital">
+						<input class="input-radio100" id="radio10" type="radio" name="famsupport" value="famsupportno">
 						<label class="label-radio100" for="radio10">
 							No
 						</label>
@@ -234,14 +234,14 @@
 					<span class="label-input100">Home internet present?</span>
 
 					<div class="contact100-form-radio m-t-15">
-						<input class="input-radio100" id="radio11" type="radio" name="wifiyes" value="physical" checked="checked">
+						<input class="input-radio100" id="radio11" type="radio" name="wifi" value="wifiyes" checked="checked">
 						<label class="label-radio100" for="radio11">
 							Yes
 						</label>
 					</div>
 
 					<div class="contact100-form-radio">
-						<input class="input-radio100" id="radio12" type="radio" name="wifino" value="digital">
+						<input class="input-radio100" id="radio12" type="radio" name="wifi" value="wifino">
 						<label class="label-radio100" for="radio12">
 							No
 						</label>
@@ -332,11 +332,11 @@
 	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
 	    });
 	</script>
-	<script src="vendor/noui/nouislider.min.js"></script>
+	
 	<script>
-	    var filterBar = document.getElementById('filter-bar2');
+	    var filterBar2 = document.getElementById('filter-bar2');
 
-	    noUiSlider.create(filterBar, {
+	    noUiSlider.create(filterBar2, {
 	        start: [ 0, 24],
 	        connect: true,
 	        range: {
@@ -346,14 +346,14 @@
 	    });
 
 	    var skipValues = [
-	    document.getElementById('value-lower'),
-	    document.getElementById('value-upper')
+	    document.getElementById('value-lower2'),
+	    document.getElementById('value-upper2')
 	    ];
 
-	    filterBar.noUiSlider.on('update', function( values, handle ) {
+	    filterBar2.noUiSlider.on('update', function( values, handle ) {
 	        skipValues[handle].innerHTML = Math.round(values[handle]);
-	        $('.contact100-form-range-value input[name="from-value"]').val($('#value-lower').html());
-	        $('.contact100-form-range-value input[name="to-value"]').val($('#value-upper').html());
+	        $('.contact100-form-range-value2 input[name="from-value"]').val($('#value-lower2').html());
+	        $('.contact100-form-range-value2 input[name="to-value"]').val($('#value-upper2').html());
 	    });
 	</script>
 <!--===============================================================================================-->

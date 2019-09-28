@@ -3,7 +3,7 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
-import firestore-api as fb
+import firestore_api as fb
 
 database_dict = fb.display_table()
 

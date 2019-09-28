@@ -3,10 +3,9 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
-import firebase-api as fb
+import firestore-api as fb
 
-database_dict = {1: [1033,"simrita",98,"A","B",21,"y"], 2:[1097,"john",89,"B","C",23,"n"]}
-
+database_dict = fb.display_table()
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'thisissupposedtobesecret'

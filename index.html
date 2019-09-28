@@ -134,10 +134,29 @@
           </li>
           <li class="breadcrumb-item active">Overview</li>
         </ol>
+        
+        <h4>Upload your files</h4>
+        
 
+        <form method="POST">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Upload Grades </label>
+              <input type="file" name='grades' class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </form>
+          <button type="button" class="btn btn-outline-primary">Submit</button>
+          <form method="POST">
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Upload Attendance File </label>
+              <input type="file"  name='attendance' class="form-control-file" id="exampleFormControlFile1">
+            </div>
+          </form>
+          <button type="button" class="btn btn-outline-primary">Submit</button>
+          <br>
+          
         <!-- Sign in as admin or student -->
 
-         <!-- Area Chart Example-->
+         <!-- Area Chart Example
         <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-chart-area"></i>
@@ -147,17 +166,20 @@
             </div>
             <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
           </div>
-
+        -->
         <!-- DataTables Example -->
+        <br>
         <div class="card mb-3">
           <div class="card-header">
+              <button type="button" class="btn btn-outline-success float-right" >Add student </button>
             <i class="fas fa-table"></i>
-            Data Table Example</div>
+            Student Details</div>
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
+                    <th>Student ID</th>
                     <th>Student Name</th>
                     <th>Attendance</th>
                     <th>Predicted grades</th>
@@ -168,6 +190,7 @@
                 </thead>
                 <tfoot>
                   <tr>
+                    <td>Student ID</td>
                     <th>Student Name</th>
                     <th>Attendance</th>
                     <th>Predicted grades</th>
@@ -177,29 +200,40 @@
                   </tr>
                 </tfoot>
                 <tbody>
-                  
+                    {% for i in database_dict.values() %}
+                    
                   <tr>
+                    {%for j in i %}
+                    <td>{{ j }}</td>
+                     {% endfor %}  
+                  </tr>
+                  {% endfor %}
+
+                  <tr>
+                    <td>1034</td>
                     <td>Michael Kinns</td>
                     <td>73%</td>
                     <td>B+</td>
                     <td>C+</td>
-                    <td>4/5</td>
+                    <td>4</td>
                     <td>y</td>
                   </tr>
                   <tr>
+                      <td>1024</td>
                       <td>George Minerva</td>
                       <td>33%</td>
                       <td>C-</td>
                       <td>D+</td>
-                      <td>21/23</td>
+                      <td>21</td>
                       <td>n</td>
                     </tr>
                     <tr>
+                        <td>1076</td>
                         <td>Leo Tolstoy</td>
                         <td>67%</td>
                         <td>A+</td>
                         <td>A+</td>
-                        <td>11/14</td>
+                        <td>11</td>
                         <td>y</td>
                       </tr>
                 </tbody>
@@ -211,6 +245,8 @@
 
       </div>
       <!-- /.container-fluid -->
+      <br>
+      <h4>Do you wish to view any specific student data?</h4>
 
       <!-- Sticky Footer -->
       <footer class="sticky-footer">

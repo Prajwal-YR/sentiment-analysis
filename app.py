@@ -3,18 +3,8 @@ from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, BooleanField
 from wtforms.validators import InputRequired, Email, Length
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import firestore
+import firebase-api as fb
 
-cred=credentials.Certificate("C:\\Users\\Administrator\\Desktop\\Singapore-India Hackathon\\flask-bootstrap trial 1\\friendlychat-3a53a-firebase-adminsdk.json")
-firebase_admin.initialize_app(cred)
-db=firestore.client()
-
-#def student_table():
-#    docs=db.collection(u'students').stream()
-#    for doc in docs:
-#        for 
 database_dict = {1: [1033,"simrita",98,"A","B",21,"y"], 2:[1097,"john",89,"B","C",23,"n"]}
 
 
@@ -33,7 +23,14 @@ def index():
         return render_template('index.html', database_dict = database_dict)
     else:
         grade_file = request.files['grades']
+        filename= secure_filename(grade_file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        fb.update_grade(filename)
         attendance_file = request.files['attendance']
+        filename1= secure_filename(attendance_file.filename)
+        file.save(os.path.join(app.config['UPLOAD_FOLDER'],filename1))
+        fb.update_attendance(filename1)
+        
     return render_template('index.html', database_dict = database_dict,msg="success")
 
 @app.route('/login.html' ,methods=["POST","GET"])
@@ -43,7 +40,11 @@ def login():
     else:
         username = request.form['username']
         password = request.form['password']
-        return redirect(url_for("index"))
+        val = fb.check_user(username,password)
+        if val==0:
+            return redirect(url_for("index"))
+        else:
+            return redirect(url_for("login"))
     return render_template('login.html')
 
 @app.route('/register.html' ,methods=["POST","GET"])
@@ -52,8 +53,10 @@ def register():
         return render_template('register.html')
     else:
         name = request.form['name']
+        username = request.form['username']
         password = request.form['password']
-        return redirect(url_for("login"))
+        fb.add_user(name,username,password)
+        return redirect(url_for("index"))
     return render_template('index.html')
 
 @app.route('/signup', methods = ['GET','POST'])

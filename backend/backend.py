@@ -20,4 +20,4 @@ for user_name in twitter_username:
     scrapeTwitter(user_name, 10)
     userDf = pd.read_csv(user_name + ".csv")
     student_twitter = userDf['tweet'].tolist()
-    print(student_twitter)
+    #print(student_twitter)

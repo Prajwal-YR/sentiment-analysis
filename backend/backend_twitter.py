@@ -16,8 +16,8 @@ def scrapeTwitter(username,limit):
 
 
 for user_name in twitter_username:
-    print(type(user_name))
+    #print(type(user_name))
     scrapeTwitter(user_name, 10)
-    userDf = pd.read_csv(user_name + ".csv")
-    student_twitter = userDf['tweet'].tolist()
+    userDf = pd.read_csv(user_name + ".csv") # convert the csv file into a panda dataframe
+    student_twitter = userDf['tweet'].tolist() # list of tweets of current user in the loop
     #print(student_twitter)

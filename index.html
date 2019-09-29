@@ -141,17 +141,19 @@
         <form method="POST">
             <div class="form-group">
               <label for="exampleFormControlFile1">Upload Grades </label>
-              <input type="file" name='grades' class="form-control-file" id="exampleFormControlFile1">
+              <input type="file" name='grades' class="form-control-file" id="exampleFormControlFile1"><br>
+               <button type="button" class="btn btn-outline-primary">Submit</button>
             </div>
           </form>
-          <button type="button" class="btn btn-outline-primary">Submit</button>
+         
           <form method="POST">
             <div class="form-group">
               <label for="exampleFormControlFile1">Upload Attendance File </label>
-              <input type="file"  name='attendance' class="form-control-file" id="exampleFormControlFile1">
+              <input type="file"  name='attendance' class="form-control-file" id="exampleFormControlFile1"><br>
+              <button type="button" class="btn btn-outline-primary">Submit</button>
             </div>
           </form>
-          <button type="button" class="btn btn-outline-primary">Submit</button>
+         
           <br>
           
         <!-- Sign in as admin or student -->
@@ -171,7 +173,7 @@
         <br>
         <div class="card mb-3">
           <div class="card-header">
-              <button type="button" class="btn btn-outline-success float-right" >Add student </button>
+              <a class="btn btn-outline-success float-right" href='add_student.html' >Add student </a>
             <i class="fas fa-table"></i>
             Student Details</div>
           <div class="card-body">
@@ -249,13 +251,11 @@
       <center>
       <h4>Do you wish to view any specific student data?</h4>
       <br>
-      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
+      <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" method='get' action="./profile.html">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-primary" type="button" href="profile.html">Check profile
-                <i class="fas fa-search"></i>
-              </button>
+              <input action="redirect_student" name = "student_id" type="text" class="form-control" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              
+              <input type="submit" class="btn btn-primary" value="Check Profile"></input>
             </div>
           </div>
         </form>
@@ -310,7 +310,6 @@
   <script src="/static/vendor/jquery-easing/jquery.easing.min.js"></script>
 
   <!-- Page level plugin JavaScript-->
-  <script src="/static/vendor/chart.js/Chart.min.js"></script>
   <script src="/static/vendor/datatables/jquery.dataTables.js"></script>
   <script src="/static/vendor/datatables/dataTables.bootstrap4.js"></script>
 
